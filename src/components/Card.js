@@ -6,27 +6,14 @@ import LazyLoad from 'react-lazyload';
 
 const Card = (props) => {
   const flickrURL = "https://www.flickr.com/photos/";
-  const author = props.item.author.replace('nobody@flickr.com ("', '').replace('")', '');
-  const authorURL = flickrURL+props.item.author_id;
   const hasTags = (props.item.tags !== "") ? true : false;
   const itemTitle = (props.item.title !== " ") ? props.item.title : "Photo";
+  const itemURL = flickrURL + props.item.pathalias + "/" + props.item.id;
+  const author = props.item.pathalias !== null ? props.item.pathalias : props.item.owner;
   const [isTagsOpen, setIsTagsOpen] = useState(false);
   const toggle = () => setIsTagsOpen(!isTagsOpen);
 
-  const getInfo = parse(props.item.description);
-
-  const descr = getInfo.filter(item => {
-    if(item.type === "p" && 
-      item.key === "5" && 
-      typeof item.props.children === 'string' && 
-      item.props.children !== ' ') {
-        return item.props.children;
-    } else {
-      return "";
-   }
-  })
-
-  const hasDescr = (descr !== undefined && descr.length !== 0) ? true : false; 
+  const hasDescr = props.item.description._content.trim('') ? true : false; 
 
   const tagArr = props.item.tags.split(' ');
   
@@ -42,24 +29,24 @@ const Card = (props) => {
     <LazyLoad height={450} offset={-200}>
       <li>
           <p className="image">
-              <a href={props.item.link} title={itemTitle}>
-                  <img alt={itemTitle} src={props.item.media.m} /> 
+              <a href={itemURL} title={itemTitle}>
+                  <img alt={itemTitle} src={props.item.url_s} /> 
               </a>
           </p>
           <p className="author">
-            <a href={props.item.link} title={itemTitle}>
+            <a href={itemURL} title={itemTitle}>
                 {itemTitle} 
-            </a> <span>by</span> <a href={authorURL}>{author}</a>
+            </a> <span>by</span> <a href={flickrURL + author}>{author}</a>
           </p>
-          <div className="descr-wrp">
+          <p className="descr-wrp">
             { hasDescr ? (
               <>
-              <strong> Description: </strong> {descr}
+              <strong> Description: </strong> {props.item.description._content}
               </>
             )
             : null
             }
-          </div>
+          </p>
           
           { hasTags ? 
             <Tags className={isTagsOpen ? "tags-open" : ""}>
