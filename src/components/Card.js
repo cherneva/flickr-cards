@@ -51,7 +51,7 @@ const Card = (props) => {
                 {itemTitle} 
             </a> <span>by</span> <a href={authorURL}>{author}</a>
           </p>
-          <p className="descr-wrp">
+          <div className="descr-wrp">
             { hasDescr ? (
               <>
               <strong> Description: </strong> {descr}
@@ -59,7 +59,7 @@ const Card = (props) => {
             )
             : null
             }
-          </p>
+          </div>
           
           { hasTags ? 
             <Tags className={isTagsOpen ? "tags-open" : ""}>
