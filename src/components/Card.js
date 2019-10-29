@@ -28,6 +28,16 @@ const Card = (props) => {
 
   const hasDescr = (descr !== undefined && descr.length !== 0) ? true : false; 
 
+  const tagArr = props.item.tags.split(' ');
+  
+  let newTags = tagArr
+    .filter(item => {return item.length > -1})
+    .map(item => {
+      const tagURL = flickrURL + 'tags/' + item;
+      item = `<a href="${tagURL}">#${item}</a>  `
+      return parse(item);
+    });
+  
   return (
     <LazyLoad height={450} offset={-200}>
       <li>
@@ -41,18 +51,20 @@ const Card = (props) => {
                 {itemTitle} 
             </a> <span>by</span> <a href={authorURL}>{author}</a>
           </p>
-          { hasDescr ? (
-            <>
-            <strong> Description: </strong> {descr}
-            </>
-          )
-          : null
-          }
+          <p className="descr-wrp">
+            { hasDescr ? (
+              <>
+              <strong> Description: </strong> {descr}
+              </>
+            )
+            : null
+            }
+          </p>
           
           { hasTags ? 
-            <Tags onClick={toggle} className={isTagsOpen ? "tags-open" : ""}>
-              <span className="tags-h"> Tags </span>
-              <span className="tags">{props.item.tags.replace(/(^|\s+)/g, "$1#")}</span>
+            <Tags className={isTagsOpen ? "tags-open" : ""}>
+              <span className="tags-h" onClick={toggle}> Tags </span>
+              <span className="tags">{newTags}</span>
             </Tags>
           : null
           }
@@ -62,11 +74,14 @@ const Card = (props) => {
 }
 
 const List = styled.ul`
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
 `
 
-const Tags = styled.div`
+const Tags = styled.p`
   display: block;
-  text-align: left;
+  text-align: center;
 `
 export {Card, List, Tags};
