@@ -4,7 +4,7 @@ Consumes the public Flickr API and display the results according to specified wi
 
 ## Quick Overview
 
-* The website is built a SPA.
+* The website is built as a SPA.
 * The tech stack used ReactJS.
 * App is fully responsive across all devices and screen sizes.
 * App has been tested in all major browsers on both Windows and Mac as well as Android Mobile device (Chrome, Firefox, Safari, IE Edge).
