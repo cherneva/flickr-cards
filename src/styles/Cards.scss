@@ -88,9 +88,10 @@ li {
 }
 
 .tags {
+  font-size: $font-size-small;
   display: inline-block;
   overflow: hidden;
-  width: 100%;
+  width: calc(100% - 40px);
   height: 0;
   display: block;
   margin-top: 10px;
@@ -98,8 +99,17 @@ li {
   left: 0;
   background: rgba(255,255,255, 0.9);
   z-index: 10;
+  padding-left: 20px;
+  padding-right: 20px;
   a {
     margin-right: 10px;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 5px 5px 0;
+    background-color: #cfd6d9;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out;
   }
 }
 .tags-open {
@@ -114,6 +124,12 @@ li {
   .tags {
     padding-bottom: 20px;
     height: auto;
+    line-height: 2.5;
+  }
+
+  a:hover {
+    background-color: $grey-dark;
+    color: $white;
   }
 }
 
