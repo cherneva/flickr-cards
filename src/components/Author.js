@@ -4,8 +4,8 @@ import '../styles/Cards.scss';
 
 const Author = (props) => {
   const itemTitle = ((props.item.title) && (props.item.title !== " ")) ? props.item.title : "Photo";
-  const itemURL = FLICKPHOTOS + props.item.pathalias + "/" + props.item.id;
   const author = props.item.pathalias !== null ? props.item.pathalias : props.item.owner;
+  const itemURL = FLICKPHOTOS + author + "/" + props.item.id;
   
   return (
     <p className="author">
