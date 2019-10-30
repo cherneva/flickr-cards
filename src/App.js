@@ -4,9 +4,12 @@ import './styles/App.scss';
 
 function App() {
   return (
+    <>
     <div className="App">
       <Cards />
     </div>
+    <div id="modal-root"></div>
+    </>
   );
 }
 
