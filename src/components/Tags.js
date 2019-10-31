@@ -15,7 +15,7 @@ const Tags = (props) => {
     .filter(item => {return item.length > -1})
     .map(item => {
       const tagURL = FLICKPHOTOS + 'tags/' + item;
-      item = `<a href='${tagURL}'>${item}</a>  `
+      item = `<a href='${tagURL}' alt='${item}' rel="nofollow, norefferer">${item}</a>  `
       return parse(item);
     });
   

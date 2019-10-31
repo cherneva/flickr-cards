@@ -9,9 +9,9 @@ const Author = (props) => {
   
   return (
     <p className="author">
-      <a href={itemURL} title={itemTitle}>
+      <a href={itemURL} title={itemTitle} rel="nofollow, norefferer">
           {itemTitle} 
-      </a> <span>by</span> <a href={FLICKPHOTOS + author}>{author}</a>
+      </a> <span>by</span> <a href={FLICKPHOTOS + author} rel="nofollow, norefferer">{author}</a>
     </p>
   )
 }
