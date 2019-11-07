@@ -16,12 +16,13 @@ Consumes the public Flickr API and display the results according to specified wi
 * CSS animations for image loading and hover interactions.
 * When thumbnail image is clicked it opens a modal with a large version of the image.
 
-## To run the app localy 
+## To run the app 
 
-```sh
-npm i
-npm start
-```
+1. Run `sh npm i`
+2. Run `sh npm start` to run locally
+3. Run `npm test` and verify all tests pass
+4. Run `sh npm run build` to build views and minify js/css
+
 ## Link to a life demo  
 
 [Demo page](http://cherneva.com/demos/flickr-cards)
