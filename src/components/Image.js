@@ -4,7 +4,7 @@ import Modal from './Modal';
 import '../styles/Cards.scss';
 
 const Image = (props) => {
-  const itemTitle = (props.item.title !== " ") ? props.item.title : "Photo";
+  const itemTitle = (props.item.title && props.item.title !== " ") ? props.item.title : "Photo";
 
   return (
     <p className="image">

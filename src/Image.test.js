@@ -19,10 +19,8 @@ afterEach(() => {
 
 it("renders fake data", async () => {
   const fakeData = {
-    title: "",
     pathalias: "",
     id: "123456", 
-    url_s: ""
   };
 
   jest.spyOn(global, "fetch").mockImplementation(() =>
@@ -37,8 +35,6 @@ it("renders fake data", async () => {
   });
 
   expect(container.querySelector(".image").textContent).toContain(fakeData.pathalias);
-  expect(container.querySelector(".image a").textContent).toContain(fakeData.title);
-  expect(container.querySelector(".image a").textContent).toContain(fakeData.url_s);
 
   // remove the mock to ensure tests are completely isolated
   global.fetch.mockRestore();
