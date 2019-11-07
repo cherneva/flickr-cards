@@ -18,10 +18,10 @@ Consumes the public Flickr API and display the results according to specified wi
 
 ## To run the app 
 
-1. Run `sh npm i`
-2. Run `sh npm start` to run locally
+1. Run `npm i`
+2. Run `npm start` to run locally
 3. Run `npm test` and verify all tests pass
-4. Run `sh npm run build` to build views and minify js/css
+4. Run `npm run build` to build views and minify js/css
 
 ## Link to a life demo  
 
