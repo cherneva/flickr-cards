@@ -1,2 +1,3 @@
 export const FLICKPHOTOS = "https://www.flickr.com/photos/";
 export const SEARCHAPI = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=d2658564f853df4c3fc2706df73cee65&tags=lakes%2C+trees%2C+macro&extras=description%2C%C2%A0owner_name%2C+tags%2C%C2%A0machine_tags%2C+o_dims%2C+views%2C+media%2C+path_alias%2C+url_l%2C+url_m%2C+description%C2%A0owner_name%2C+tags%2C%C2%A0url_m&format=json&nojsoncallback=1";
+export const EXCLUDE_TAGS = ["sex", "nacked", "adult", "sexy", "porn", "eroticism"];

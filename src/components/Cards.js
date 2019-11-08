@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SEARCHAPI } from '../constants';
+import { SEARCHAPI, EXCLUDE_TAGS } from '../constants';
 import { List, Card } from './Card';
 import Spinner from './Spinner';
 import '../styles/Cards.scss';
@@ -23,11 +23,21 @@ const Cards = () => {
       fetchData();
     }, []);
 
-    if (!hasError && (data.photos.photo !== undefined)) {
-        showData = [...data.photos.photo].map((item, index) => <Card key={index} item={item} />);
-    } else if (hasError){
+    if (!hasError && data.photos.photo !== undefined) {
+        
+        showData = [...data.photos.photo]
+            .filter(item => {
+                let itemTags = item.tags.split(' ');
+                return itemTags.filter(item => EXCLUDE_TAGS.includes(item)).length === 0
+            })
+            .filter(item => {
+                return (item.url_m !== undefined && item.url_l !== undefined)
+            })
+            .map((item, index) =>  <Card key={index} item={item} /> );
+    } else {
         showData = "Something went wrong";
     }
+    
     
     return (   
         <>
