@@ -34,7 +34,7 @@ const Cards = () => {
                 return (item.url_m !== undefined && item.url_l !== undefined)
             })
             .map((item, index) =>  <Card key={index} item={item} /> );
-    } else {
+    } else if (hasError) {
         showData = "Something went wrong";
     }
     
