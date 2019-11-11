@@ -5,26 +5,26 @@ import styled from 'styled-components';
 import '../styles/Cards.scss';
 
 const Tags = (props) => {
-  const tagsData = (props.item.tags) && (props.item.tags !== '') ? props.item.tags : "";
-  const hasTags = (tagsData !== '') ? true : false;
+  const tagsData = (props.item.tags) && (props.item.tags !== "") ? props.item.tags : "";
+  const hasTags = (tagsData !== "") ? true : false;
   const [isTagsOpen, setIsTagsOpen] = useState(false);
   const toggle = () => setIsTagsOpen(!isTagsOpen);
-  const tagArr = tagsData.split(' ');
+  const tagArr = tagsData.split(" ");
   
   let newTags = tagArr
     .filter(item => {return item.length > -1})
     .map(item => {
-      const tagURL = FLICKPHOTOS + 'tags/' + item;
-      item = `<a href='${tagURL}' alt='${item}' rel="nofollow, norefferer">${item}</a>  `
+      const tagURL = FLICKPHOTOS + "tags/" + item;
+      item = `<a href="${tagURL}" alt="${item}" rel="nofollow, norefferer">${item}</a>  `
       return parse(item);
     });
   
   return (
-    <Tag className={isTagsOpen ? 'tags-wrp tags-open' : 'tags-wrp'}>
+    <Tag className={isTagsOpen ? "tags-wrp tags-open" : "tags-wrp"}>
         { hasTags ? 
           <>
-            <span className='tags-h' onClick={toggle}> Tags </span>
-            <span className='tags'>{newTags}</span>
+            <span className="tags-h" onClick={toggle}> Tags </span>
+            <span className="tags">{newTags}</span>
           </>
             : null
           }

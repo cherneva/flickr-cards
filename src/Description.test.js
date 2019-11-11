@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import Description from './components/Description';
+import Description from "./components/Description";
 
 let container = null;
 beforeEach(() => {

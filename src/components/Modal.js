@@ -1,13 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const Modal = ({ children }) => (
+const Modal = ({ children }) => 
     ReactDOM.createPortal(
       <>
         {children}
       </>,
-      document.getElementById('modal-root')
-    )
-  );
+      document.getElementById("modal-root")
+    );
 
 export default Modal;

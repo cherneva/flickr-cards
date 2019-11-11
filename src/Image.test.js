@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import Image from './components/Image';
+import Image from "./components/Image";
 
 let container = null;
 beforeEach(() => {

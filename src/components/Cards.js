@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { SEARCHAPI, EXCLUDE_TAGS } from '../constants';
 import { List, Card } from './Card';
 import Spinner from './Spinner';
@@ -27,7 +27,7 @@ const Cards = () => {
         
         showData = [...data.photos.photo]
             .filter(item => {
-                let itemTags = item.tags.split(' ');
+                let itemTags = item.tags.split(" ");
                 return itemTags.filter(item => EXCLUDE_TAGS.includes(item)).length === 0
             })
             .filter(item => {

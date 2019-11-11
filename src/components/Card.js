@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
 import Image from './Image';
@@ -7,8 +7,7 @@ import Description from './Description';
 import Tags from './Tags';
 import '../styles/Cards.scss';
 
-const Card = (props) => {
-  return (
+const Card = (props) => 
     <LazyLoad height={450} offset={-200}>
       <li>
           <Image item={props.item}/>
@@ -17,8 +16,7 @@ const Card = (props) => {
           <Tags item={props.item}/>
       </li>
     </LazyLoad>
-  )
-}
+ 
 
 const List = styled.ul`
   display: flex;

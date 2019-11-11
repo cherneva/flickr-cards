@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Toggle from './Toggle';
 import Modal from './Modal';
 import '../styles/Cards.scss';

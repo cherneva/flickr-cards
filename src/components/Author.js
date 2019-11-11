@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { FLICKPHOTOS } from '../constants';
 import '../styles/Cards.scss';
 
